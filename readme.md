@@ -9,6 +9,29 @@
 ```
 >>> pip show django PyJWT djangorestframework django-cors-headers mysqlclient
 ```
+### CẤU HÌNH VÀ KẾT NỐI DATABASE
+Các cấu hình đã được thực hiện trước và lưu lại trong file [/apisite/apisite/settings.py](https://github.com/theeslinh/restapi-user-task/blob/main/apisite/apisite/settings.py).
+```python
+INSTALLED_APPS = [
+    ...
+    'rest_framework',
+    'taskapi',
+    'corsheaders',
+]
+MIDDLEWARE = [
+    ...
+    'corsheaders.middleware.CorsMiddleware',
+]
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+AUTH_USER_MODEL = 'taskapi.User'
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+```
 ### DEPLOY 
 - Tải xuống [project repo](https://github.com/theeslinh/restapi-user-task/archive/refs/heads/main.zip) và giải nén
 - Khởi động Windows Command Prompt và chạy lệnh
@@ -18,7 +41,7 @@
 >>> python manage.py migrate
 >>> python manage.py runserver
 ```
-- Khởi động trình duyệt, truy cập vào địa chỉ [127.0.0.1:8000/app/](http://127.0.0.1:8000/app/)
+- Khởi động trình duyệt, truy cập vào địa chỉ http://127.0.0.1:8000/app/index
 ----------
 ## THỬ NGHIỆM CÁC  API
 #### 1. SIGN-UP
