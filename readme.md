@@ -63,7 +63,7 @@ Vary: Accept
 #### 3. GET-ALL-USER
 Sau khi đã đăng nhập, ta đã có chứng thực JWT lưu trong cookie nên có thể truy cập được những api khác. Trước hết ta xem danh sách users trong hệ thống đã được cập nhật mới chưa.
 Truy cập vào địa chỉ http://127.0.0.1:8000/app/users ta nhận được response như sau
-```json
+```
 HTTP 200 OK
 Allow: GET, HEAD, OPTIONS
 Content-Type: application/json
@@ -83,7 +83,7 @@ Vary: Accept
 ```
 #### 4. GET-ALL-TO-DO
 Truy cập vào địa chỉ http://127.0.0.1:8000/app/users ta nhận được response như sau
-```json
+```
 HTTP 200 OK
 Allow: GET, POST, HEAD, OPTIONS
 Content-Type: application/json
